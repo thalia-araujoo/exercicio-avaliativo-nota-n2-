@@ -1,0 +1,32 @@
+//Escreva um programa que solicite ao usuário que digite uma string
+//e, em seguida, crie uma nova string que seja a cópia da string original, mas com todas as vogais removidas.
+//O programa deve usar ponteiros para manipular as strings.
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+	char fraseCVogal [50];
+	char fraseSemVogal[50];
+	char *p = fraseCVogal;
+	int i, consoante = 0; // esse inteiro consoantes é responsavel por guarda as consoantes
+	
+	//ele pede para q o usuario digite uma frase
+	printf("Digite uma frase: ");
+	gets(fraseCVogal);
+	
+	
+	//ele pede uma nova frase so que agr sem vogal entt faço um for para que ele percora toda a frase e tire
+	printf("Digite a nova frase: ");
+	for(int i = 0; i < strlen(fraseCVogal); i++){
+		if(!(fraseCVogal[i] == 'a' || fraseCVogal[i] == 'e' || fraseCVogal[i] == 'i' || fraseCVogal[i] == 'o' || fraseCVogal[i] == 'u')){
+			fraseSemVogal[consoante] = *(p + i);
+			consoante++;  //ou seja tudo que n vou vogal vai ficar guardada nessa variavel
+			
+		}
+		
+	}
+	printf("%s\n",fraseSemVogal);
+
+	return 0;
+}
