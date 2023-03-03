@@ -1,9 +1,15 @@
 #include <stdio.h>
-//Escreva um programa que declare duas variáveis inteiras e dois ponteiros para essas variáveis.
-//Em seguida, preencha as variáveis com valores informados pelo usuário.
-//Utilizando ponteiros, troque os valores entre as duas variáveis sem usar uma variável temporária e sem utilizar operadores de atribuição direta.
-//Em seguida, imprima os valores atualizados das duas variáveis.
+//Escreva um programa que declare duas variÃ¡veis inteiras e dois ponteiros para essas variÃ¡veis.
+//Em seguida, preencha as variÃ¡veis com valores informados pelo usuÃ¡rio.
+//Utilizando ponteiros, troque os valores entre as duas variÃ¡veis sem usar uma variÃ¡vel temporÃ¡ria e sem utilizar operadores de atribuiÃ§Ã£o direta.
+//Em seguida, imprima os valores atualizados das duas variÃ¡veis.
 
+void troca(int *a, int *b){
+	*a = *a + *b;
+	*b = *a - *b;
+	*a = *a - *b;
+}
+	
 int main(){
 	int a, b;
 	
@@ -22,9 +28,7 @@ int main(){
 	printf("Informe outro valor: ");
 	scanf("%d", &b);
 	
-	*pa = *pa + *pb;
-	*pb = *pa - *pb;
-	*pa = *pa - *pb;
+	troca(pa, pb);
 	
 	printf("valor de A: %d\n valor de B: %d\n", *pa, *pb);
 	
