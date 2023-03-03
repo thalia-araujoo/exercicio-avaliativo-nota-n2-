@@ -9,18 +9,20 @@ int main(){
 	char fraseCVogal [50];
 	char fraseSemVogal[50];
 	char *p = fraseCVogal;
-	int i, consoante = 0; // esse inteiro consoantes é responsavel por guarda as consoantes
+	int i, consoante = 0; // esse inteiro (consoantes) é responsavel por guarda as consoantes, ou seja qnd ele for passando caractere por caractere ele vai tiranso as consoantes e guardando nessa variavel 
 	
 	//ele pede para q o usuario digite uma frase
 	printf("Digite uma frase: ");
 	gets(fraseCVogal);
 	
 	
-	//ele pede uma nova frase so que agr sem vogal entt faço um for para que ele percora toda a frase e tire
+	//ele pede uma copia da frase, so que agr sem vogal entt faço um for para que ele percora toda a frase e tire as vogais, guardando as consoantes em uma variavel
 	printf("Digite a nova frase: ");
-	for(int i = 0; i < strlen(fraseCVogal); i++){
+	for(int i = 0; i < strlen(fraseCVogal); i++){   //essa função ele vai percorrer a frase verificando cada caractere
 		if(!(fraseCVogal[i] == 'a' || fraseCVogal[i] == 'e' || fraseCVogal[i] == 'i' || fraseCVogal[i] == 'o' || fraseCVogal[i] == 'u')){
+			//qnd cai nesse if, ele esta verificando se na frase existe essas letras, se  tiver ele retira ela, se nao, ele guarda essa caractere em um variavel, no caso, "consoantes".
 			fraseSemVogal[consoante] = *(p + i);
+			
 			consoante++;  //ou seja tudo que n vou vogal vai ficar guardada nessa variavel
 			
 		}
